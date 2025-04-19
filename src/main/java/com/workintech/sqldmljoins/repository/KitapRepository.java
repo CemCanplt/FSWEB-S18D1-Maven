@@ -12,7 +12,7 @@ public interface KitapRepository extends JpaRepository<Kitap, Long> {
     String QUESTION_1 = "SELECT *\n" +
             "FROM kitap, tur\n" +
             "WHERE kitap.turno = tur.turno\n" +
-            "AND tur.ad IN ('Dram', 'Hikaye');";
+            "AND tur.ad IN ('Dram', 'Hikaye')";
     @Query(value = QUESTION_1, nativeQuery = true)
     List<Kitap> findBooks();
 

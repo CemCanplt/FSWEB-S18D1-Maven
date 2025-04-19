@@ -23,7 +23,7 @@ public interface OgrenciRepository extends JpaRepository<Ogrenci, Long> {
             "FROM ogrenci o\n" +
             "LEFT JOIN islem i\n" +
             "ON o.ogrno = i.ogrno\n" +
-            "WHERE i.ogrno IS NULL;";
+            "WHERE i.ogrno IS NULL";
     @Query(value = QUESTION_3, nativeQuery = true)
     List<Ogrenci> findStudentsWithNoBook();
 
@@ -33,7 +33,7 @@ public interface OgrenciRepository extends JpaRepository<Ogrenci, Long> {
             "LEFT JOIN islem i\n" +
             "ON o.ogrno = i.ogrno\n" +
             "WHERE o.sinif IN ('10A', '10B')\n" +
-            "GROUP BY o.sinif;";
+            "GROUP BY o.sinif";
     @Query(value = QUESTION_4, nativeQuery = true)
     List<KitapCount> findClassesWithBookCount();
 
